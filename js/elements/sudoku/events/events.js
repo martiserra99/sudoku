@@ -6,7 +6,7 @@ export const setupEvents = function (sudoku) {
 
   sudoku.events.set("numberClick", function (sudoku, signal, state) {
     if (signal.type !== "keyup") return { event: false };
-    const key = signal.data.key;
+    const key = signal.data;
     if (isNaN(key)) return { event: false };
     const num = +key;
     if (num < 1 || num > 9) return { event: false };
@@ -14,7 +14,7 @@ export const setupEvents = function (sudoku) {
   });
 
   sudoku.events.set("backspaceClick", function (sudoku, signal, state) {
-    if (signal.type !== "keyup" || signal.data.key !== "Backspace")
+    if (signal.type !== "keyup" || signal.data !== "Backspace")
       return { event: false };
     return { event: true };
   });
