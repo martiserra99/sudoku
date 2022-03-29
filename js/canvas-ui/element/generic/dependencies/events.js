@@ -32,7 +32,15 @@ class State {
   }
 
   get(name, value) {
-    if (!this._properties.has(name)) return value;
+    if (!this.has(name)) return value;
     return this._properties.get(name);
+  }
+
+  del(name) {
+    this._keys.delete(name);
+  }
+
+  has(name) {
+    return this._keys.has(name);
   }
 }
