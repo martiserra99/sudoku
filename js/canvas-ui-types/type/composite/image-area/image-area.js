@@ -20,14 +20,14 @@ export const newCompositeImageArea = function () {
     left: 0,
   });
 
-  imageArea.lifecycle.set("onGetElement", function (imageArea) {
+  imageArea.lifecycle.set("getElement", function (imageArea) {
     const frame = canvasUI.layout.new("frame", "frame");
     const image = canvasUI.view.new("image", "image");
     frame.insert(image);
     return frame;
   });
 
-  imageArea.lifecycle.set("onUpdateElement", function (imageArea, frame) {
+  imageArea.lifecycle.set("updateElement", function (imageArea, frame) {
     frame.set("size", imageArea.get("size"));
     frame.set("background", imageArea.get("background"));
     frame.set("border", imageArea.get("border"));

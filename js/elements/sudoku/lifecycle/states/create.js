@@ -1,7 +1,7 @@
 import { canvasUI } from "../../../../canvas-ui/canvas-ui.js";
 
 export const setupCreateLifecycleFunctions = function (sudoku) {
-  sudoku.lifecycle.set("onGetElement", function (sudoku) {
+  sudoku.lifecycle.set("getElement", function (sudoku) {
     return sudoku.inner.call("buildGrid");
   });
 

@@ -1,5 +1,5 @@
 export const setupStartLifecycleFunctions = function (sudoku) {
-  sudoku.lifecycle.set("onUpdateElement", function (sudoku, grid) {
+  sudoku.lifecycle.set("updateElement", function (sudoku, grid) {
     sudoku.inner.call("updateGrid", grid);
   });
 

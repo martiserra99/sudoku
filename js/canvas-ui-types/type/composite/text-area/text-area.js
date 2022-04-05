@@ -25,14 +25,14 @@ export const newCompositeTextArea = function () {
     left: 0,
   });
 
-  textArea.lifecycle.set("onGetElement", function (textArea) {
+  textArea.lifecycle.set("getElement", function (textArea) {
     const frame = canvasUI.layout.new("frame", "frame");
     const text = canvasUI.view.new("text", "text");
     frame.insert(text);
     return frame;
   });
 
-  textArea.lifecycle.set("onUpdateElement", function (textArea, frame) {
+  textArea.lifecycle.set("updateElement", function (textArea, frame) {
     frame.set("size", textArea.get("size"));
     frame.set("background", textArea.get("background"));
     frame.set("border", textArea.get("border"));
