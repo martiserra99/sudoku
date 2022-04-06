@@ -39,6 +39,8 @@ export class View {
     sudoku.set("size", 450);
     sudoku.get("font").size = 30;
     sudoku.get("font").family = "Raleway, sans-serif";
+    sudoku.get("font").color = "#111";
+    sudoku.set("lines", { color: "#111", outside: true });
     return sudoku;
   }
 
@@ -82,7 +84,7 @@ export class View {
     button.get("font").weight = 600;
     button.get("font").size = 16;
     button.get("font").color = "#fff";
-    button.set("background", "#000");
+    button.set("background", "#111");
     button.set("corner", { type: "round", size: 5 });
   }
 
@@ -91,7 +93,7 @@ export class View {
       button.set("background", "#333");
     });
     button.listeners.add("mouseleave", function (button) {
-      button.set("background", "#000");
+      button.set("background", "#111");
     });
   }
 
