@@ -1,7 +1,7 @@
 export class Sudoku {
   constructor(view) {
     this._view = view;
-    this._sudoku = view.root.find("sudoku");
+    this._sudoku = view.rootElement.find("sudoku");
   }
 
   set(position, cell) {

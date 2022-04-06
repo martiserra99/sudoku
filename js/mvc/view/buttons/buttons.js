@@ -1,7 +1,7 @@
 export class Buttons {
   constructor(view) {
     this._view = view;
-    this._buttons = view.root.find("buttons");
+    this._buttons = view.rootElement.find("buttons");
     this._generate = this._buttons.find("buttonGenerate");
   }
 
