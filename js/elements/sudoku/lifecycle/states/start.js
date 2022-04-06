@@ -6,11 +6,13 @@ export const setupStartLifecycleFunctions = function (sudoku) {
   sudoku.inner.fun("updateGrid", function (sudoku, grid) {
     const size = sudoku.get("size");
     const lines = sudoku.get("lines");
+    const background = sudoku.get("background");
     grid.set("size", {
       width: { unit: "px", value: size },
       height: { unit: "px", value: size },
     });
     grid.get("gap").color = lines.color;
+    grid.set("background", background);
     if (lines.outside) grid.set("border", { size: 3, color: lines.color });
     else grid.set("border", { size: 0, color: "rgba(0,0,0,0)" });
 
