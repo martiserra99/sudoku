@@ -3,7 +3,7 @@ import { ElementType, ElementLifecycle } from "../generic/element.js";
 export class LayoutType extends ElementType {
   constructor(data) {
     super(data);
-    this.childLayoutParams = new ChildLayoutParams();
+    this.layoutParams = new LayoutParams();
   }
 
   _getLifecycle() {
@@ -14,26 +14,26 @@ export class LayoutType extends ElementType {
 class LayoutLifecycle extends ElementLifecycle {
   _setFunctions() {
     super._setFunctions();
-    this._lifecycle.set("sortchildrenToMeasure", (layout) => layout.children);
+    this._lifecycle.set("sortChildrenToMeasure", (layout) => layout.children);
     this._lifecycle.set("getChildMaxSize", () => ({ width: 0, height: 0 }));
     this._lifecycle.set("getSize", () => ({ width: 0, height: 0 }));
-    this._lifecycle.set("sortchildrenToLocate", (layout) => layout.children);
+    this._lifecycle.set("sortChildrenToLocate", (layout) => layout.children);
     this._lifecycle.set("getChildCoords", (layout, coords) => coords);
     this._lifecycle.set("drawItself", () => {});
-    this._lifecycle.set("sortchildrenToDraw", (layout) => layout.children);
+    this._lifecycle.set("sortChildrenToDraw", (layout) => layout.children);
   }
 }
 
-class ChildLayoutParams {
+class LayoutParams {
   constructor() {
-    this._childLayoutParams = new Map();
+    this._layoutParams = new Map();
   }
 
   [Symbol.iterator]() {
-    return this._childLayoutParams[Symbol.iterator]();
+    return this._layoutParams[Symbol.iterator]();
   }
 
   set(name, value) {
-    this._childLayoutParams.set(name, value);
+    this._layoutParams.set(name, value);
   }
 }

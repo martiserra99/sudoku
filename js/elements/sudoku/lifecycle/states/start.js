@@ -48,7 +48,7 @@ export const setupStartLifecycleFunctions = function (sudoku) {
 
     cell.get("font").family = font.family;
     cell.get("font").size = font.size;
-    cell.get("font").color = font.color;
+    cell.set("color", font.color);
 
     const { number, fixed } = cells[column][row];
 

@@ -1,4 +1,5 @@
 import { canvasUI } from "../../canvas-ui/canvas-ui.js";
+import { config } from "../../config.js";
 import { Buttons } from "./buttons/buttons.js";
 import { Sudoku } from "./sudoku/sudoku.js";
 
@@ -35,11 +36,9 @@ export class View {
 
   _buildSudoku() {
     const sudoku = canvasUI.composite.new("sudoku", "sudoku");
-    sudoku.set("size", 450);
-    sudoku.get("font").size = 30;
-    sudoku.get("font").family = "Raleway, sans-serif";
-    sudoku.get("font").color = "#111";
-    sudoku.set("lines", { color: "#111", outside: true });
+    sudoku.set("size", config.styles.sudoku.size);
+    sudoku.set("font", config.styles.sudoku.font);
+    sudoku.set("lines", config.styles.sudoku.lines);
     return sudoku;
   }
 
@@ -56,7 +55,7 @@ export class View {
   _buildButtons() {
     const buttons = canvasUI.layout.new("buttons", "linear");
     buttons.set("size", {
-      width: { unit: "px", value: 450 },
+      width: { unit: "px", value: config.styles.sudoku.size },
       height: "auto",
     });
     buttons.set("direction", "vertical");
@@ -79,20 +78,19 @@ export class View {
       height: { unit: "px", value: 50 },
     });
     button.set("text", text);
-    button.get("font").family = "Raleway, sans-serif";
-    button.get("font").weight = 600;
-    button.get("font").size = 16;
-    button.get("font").color = "#fff";
-    button.set("background", "#111");
-    button.set("corner", { type: "round", size: 5 });
+    button.set("font", config.styles.button.font);
+    button.set("color", config.styles.button.color);
+    button.set("background", config.styles.button.background);
+    button.set("border", config.styles.button.border);
+    button.set("corner", config.styles.button.corner);
   }
 
   _setButtonEffect(button) {
-    button.listeners.add("mouseenter", function (button) {
-      button.set("background", "#333");
+    button.listeners.add("mousedown", function () {
+      button.set("background", config.styles.button.mousedown.background);
     });
-    button.listeners.add("mouseleave", function (button) {
-      button.set("background", "#111");
+    this.rootElement.listeners.add("mouseup", function () {
+      button.set("background", config.styles.button.background);
     });
   }
 
@@ -128,10 +126,8 @@ export class View {
   _buildInstruction(id, text) {
     const instruction = canvasUI.view.new(id, "text");
     instruction.set("text", text);
-    instruction.get("font").family = "Raleway, sans-serif";
-    instruction.get("font").weight = 400;
-    instruction.get("font").size = 16;
-    instruction.get("font").color = "#000";
+    instruction.set("font", config.styles.text.font);
+    instruction.set("color", config.styles.text.color);
     return instruction;
   }
 
