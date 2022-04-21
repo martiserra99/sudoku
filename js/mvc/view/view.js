@@ -7,7 +7,6 @@ export class View {
     this.ui = canvasUI.ui.new(selector);
 
     this._buildUI();
-    this._adaptUIWithSize();
     this.ui.start(this.rootElement);
 
     this.sudoku = new Sudoku(this);
@@ -145,37 +144,5 @@ export class View {
       bottom: null,
     });
     instructions.layoutParams.get("margin").top = 30;
-  }
-
-  _adaptUIWithSize() {
-    const adaptUI = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      if (height < 650 || width < 500) {
-        this.rootElement.remove(this.buttonsElement);
-      } else {
-        if (this.rootElement.find("buttons") === null)
-          this._insertButtons(this.rootElement, this.buttonsElement);
-      }
-
-      if (height < 800 || width < 500) {
-        this.rootElement.remove(this.instructionsElement);
-      } else {
-        if (this.rootElement.find("instructions") === null)
-          this._insertInstructions(this.rootElement, this.instructionsElement);
-      }
-
-      if (width < 500) {
-        this.sudokuElement.set("size", 300);
-        this.sudokuElement.get("font").size = 18;
-      } else {
-        this.sudokuElement.set("size", 450);
-        this.sudokuElement.get("font").size = 30;
-      }
-    };
-
-    setTimeout(() => adaptUI(), 0);
-    window.addEventListener("resize", () => adaptUI());
   }
 }
