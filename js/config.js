@@ -22,13 +22,5 @@ export const config = {
       },
       mousedown: { background: "##E0E0E0" },
     },
-    text: {
-      color: "#626262",
-      font: {
-        family: "Raleway, sans-serif",
-        size: 16,
-        weight: 400,
-      },
-    },
   },
 };
