@@ -9,6 +9,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 #ui {
   width: 100vw;
   height: 100vh;
