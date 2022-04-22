@@ -20,7 +20,7 @@ export const config = {
         size: 16,
         weight: 600,
       },
-      mousedown: { background: "##E0E0E0" },
+      mousedown: { background: "#E0E0E0" },
     },
   },
 };
