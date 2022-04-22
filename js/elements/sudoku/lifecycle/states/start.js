@@ -63,7 +63,7 @@ export const setupStartLifecycleFunctions = function (sudoku) {
       column === selectedCell.column &&
       row === selectedCell.row;
 
-    if (selected) cell.set("border", { size: 3, color: lines.color });
-    else cell.set("border", { size: 0, color: "rgba(0,0,0,0)" });
+    if (selected) cell.set("background", sudoku.get("selected").background);
+    else cell.set("background", "rgba(0,0,0,0)");
   });
 };

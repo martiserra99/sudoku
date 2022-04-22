@@ -15,6 +15,7 @@ export const newCompositeSudoku = function () {
   });
   sudoku.set("lines", { color: "#000", outside: true });
   sudoku.set("background", "rgba(0,0,0,0)");
+  sudoku.set("selected", { background: "#ccc" });
 
   const cells = [];
   for (let i = 0; i < 9; i++) {

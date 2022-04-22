@@ -8,6 +8,7 @@ export const config = {
         color: "#626262",
       },
       background: "rgba(0,0,0,0)",
+      selected: { background: "#F5F5F5" },
       lines: { color: "#E0E0E0", outside: false },
     },
     button: {

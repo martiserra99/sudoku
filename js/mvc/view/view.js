@@ -37,6 +37,7 @@ export class View {
     sudoku.set("size", config.styles.sudoku.size);
     sudoku.set("font", config.styles.sudoku.font);
     sudoku.set("lines", config.styles.sudoku.lines);
+    sudoku.set("selected", config.styles.sudoku.selected);
     return sudoku;
   }
 
