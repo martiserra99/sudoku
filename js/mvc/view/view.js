@@ -26,8 +26,6 @@ export class View {
     this._insertSudoku(this.rootElement, this.sudokuElement);
     this.buttonsElement = this._buildButtons();
     this._insertButtons(this.rootElement, this.buttonsElement);
-    this.instructionsElement = this._buildInstructions();
-    this._insertInstructions(this.rootElement, this.instructionsElement);
   }
 
   _buildRoot() {
@@ -103,42 +101,5 @@ export class View {
       right: "parent",
     });
     buttons.layoutParams.get("margin").top = 20;
-  }
-
-  _buildInstructions() {
-    const instructions = canvasUI.layout.new("instructions", "linear");
-    instructions.set("size", { width: "auto", height: "auto" });
-    instructions.set("direction", "vertical");
-    instructions.set("gap", 20);
-    const insturction1 = this._buildInstruction(
-      "instruction-1",
-      "Select the cells and press the keys to add the numbers."
-    );
-    instructions.insert(insturction1);
-    const insturction2 = this._buildInstruction(
-      "instruction-2",
-      "Press backspace to remove the numbers."
-    );
-    instructions.insert(insturction2);
-    return instructions;
-  }
-
-  _buildInstruction(id, text) {
-    const instruction = canvasUI.view.new(id, "text");
-    instruction.set("text", text);
-    instruction.set("font", config.styles.text.font);
-    instruction.set("color", config.styles.text.color);
-    return instruction;
-  }
-
-  _insertInstructions(root, instructions) {
-    root.insert(instructions);
-    instructions.layoutParams.set("attachTo", {
-      top: root.find("buttons"),
-      right: "parent",
-      left: "parent",
-      bottom: null,
-    });
-    instructions.layoutParams.get("margin").top = 30;
   }
 }
