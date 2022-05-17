@@ -1,4 +1,4 @@
-import { canvasUI } from "../../canvas-ui/canvas-ui.js";
+import canvasUI from "../../canvasui-js.js";
 import { config } from "../../config.js";
 import { Buttons } from "./buttons/buttons.js";
 import { Sudoku } from "./sudoku/sudoku.js";
@@ -96,11 +96,11 @@ export class View {
   _insertButtons(root, buttons) {
     root.insert(buttons);
     buttons.layoutParams.set("attachTo", {
-      top: root.find("sudoku"),
+      top: { side: "bottom", child: "sudoku" },
       bottom: null,
       left: "parent",
       right: "parent",
     });
-    buttons.layoutParams.get("margin").top = 20;
+    buttons.layoutParams.get("margin").top = 50;
   }
 }
