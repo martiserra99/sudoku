@@ -14,8 +14,10 @@ body {
 }
 
 #ui {
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
+  margin-top: 10px;
+  margin-left: 10px;
   min-width: 600px;
   min-height: 800px;
 }

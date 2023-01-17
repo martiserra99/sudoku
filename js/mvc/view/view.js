@@ -1,4 +1,4 @@
-import canvasUI from "../../canvasui-js.js";
+import canvasUI from "../../canvas-user-interface.js";
 import { config } from "../../config.js";
 import { Buttons } from "./buttons/buttons.js";
 import { Sudoku } from "./sudoku/sudoku.js";
