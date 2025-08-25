@@ -1,4 +1,4 @@
-import canvasUI from "../../../../canvas-user-interface.js";
+import canvasUI from "../../../../canvas-user-interface/index.esm.js";
 
 export const setupCreateLifecycleFunctions = function (sudoku) {
   sudoku.lifecycle.set("getElement", function (sudoku) {

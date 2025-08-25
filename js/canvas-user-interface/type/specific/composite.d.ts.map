@@ -1,0 +1,1 @@
+{"version":3,"file":"composite.d.ts","sourceRoot":"","sources":["../../../src/type/specific/composite.ts"],"names":[],"mappings":"AAAA,OAAO,WAAW,EAAE,EAAE,gBAAgB,EAAE,MAAM,4BAA4B,CAAC;AAE3E,cAAM,aAAc,SAAQ,WAAW;IACrC,SAAS,CAAC,YAAY;CAGvB;AAED,cAAM,kBAAmB,SAAQ,gBAAgB;IAC/C,YAAY;CASb;AAED,eAAe,aAAa,CAAC"}
